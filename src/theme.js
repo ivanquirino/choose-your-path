@@ -5,6 +5,7 @@ const colors = {
   black: "#2A2A2A",
   bgDark: "#2B2B2B",
   bgLight: "#FBFE63",
+  grey: '#bfbfbf'
 };
 
 const breakpoints = ['800px'];

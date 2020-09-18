@@ -1,8 +1,23 @@
-import { color, space, typography, variant, flexbox } from "styled-system";
+import {
+  color,
+  space,
+  typography,
+  variant,
+  flexbox,
+  layout,
+} from "styled-system";
 import styled from "styled-components";
 import css from "@styled-system/css";
+import { Link as RouterLink } from "react-router-dom";
 
-export const Span = styled.span(color, space, typography);
+export const Span = styled.span(
+  css({
+    fontFamily: "Montserrat, sans-serif",
+  }),
+  color,
+  space,
+  typography
+);
 
 export const Flex = styled.div(
   {
@@ -10,6 +25,10 @@ export const Flex = styled.div(
   },
   flexbox
 );
+
+export const Box = styled.div(color, space, typography, layout);
+
+export const Link = styled(RouterLink)({ textDecoration: "none" });
 
 export const Button = styled.button(
   css({
@@ -47,5 +66,6 @@ export const Button = styled.button(
         width: "347px",
       },
     },
-  })
+  }),
+  space
 );
