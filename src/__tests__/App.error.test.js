@@ -9,14 +9,14 @@ describe("App Integration tests", () => {
   });
 
   test("Error result then success result", async () => {
-    let lightSide = nock("https://swapi.dev/api/people")
+    let lightSide = nock("http://swapi.dev/api/people")
       .get("/1")
       .reply(
         500,
         { name: "Luke Skywalker" },
         { "Access-Control-Allow-Origin": "*" }
       );
-    let darkSide = nock("https://swapi.dev/api/people")
+    let darkSide = nock("http://swapi.dev/api/people")
       .get("/4")
       .delay(1000)
       .reply(
@@ -42,14 +42,14 @@ describe("App Integration tests", () => {
 
     // Now success
 
-    lightSide = nock("https://swapi.dev/api/people")
+    lightSide = nock("http://swapi.dev/api/people")
       .get("/1")
       .reply(
         200,
         { name: "Luke Skywalker" },
         { "Access-Control-Allow-Origin": "*" }
       );
-    darkSide = nock("https://swapi.dev/api/people")
+    darkSide = nock("http://swapi.dev/api/people")
       .get("/4")
       .delay(1000)
       .reply(

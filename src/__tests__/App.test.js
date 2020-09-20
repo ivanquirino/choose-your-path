@@ -9,14 +9,14 @@ describe("App Integration tests", () => {
   });
 
   test("Light side result, then dark side result", async () => {
-    let lightSide = nock("https://swapi.dev/api/people")
+    let lightSide = nock("http://swapi.dev/api/people")
       .get("/1")
       .reply(
         200,
         { name: "Luke Skywalker" },
         { "Access-Control-Allow-Origin": "*" }
       );
-    let darkSide = nock("https://swapi.dev/api/people")
+    let darkSide = nock("http://swapi.dev/api/people")
       .get("/4")
       .delay(1000)
       .reply(
@@ -42,7 +42,7 @@ describe("App Integration tests", () => {
 
     // Now for the dark side
 
-    lightSide = nock("https://swapi.dev/api/people")
+    lightSide = nock("http://swapi.dev/api/people")
       .get("/1")
       .delay(1000)
       .reply(
@@ -50,7 +50,7 @@ describe("App Integration tests", () => {
         { name: "Luke Skywalker" },
         { "Access-Control-Allow-Origin": "*" }
       );
-    darkSide = nock("https://swapi.dev/api/people")
+    darkSide = nock("http://swapi.dev/api/people")
       .get("/4")
       
       .reply(
