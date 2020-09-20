@@ -9,6 +9,7 @@ import Welcome from "./pages/Welcome";
 import Result from "./pages/Result";
 import createStore from "./state/store";
 import rootSaga from "./state/saga";
+import GlobalStyle from './Global.styled'
 
 const { store, sagaMiddleware } = createStore();
 
@@ -18,6 +19,7 @@ function App() {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
+        <GlobalStyle />
         <Router>
           <Switch>
             <Route path="/" exact>

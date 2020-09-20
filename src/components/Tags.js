@@ -23,7 +23,8 @@ export const Flex = styled.div(
   {
     display: "flex",
   },
-  flexbox
+  flexbox,
+  space
 );
 
 export const Box = styled.div(color, space, typography, layout);
@@ -32,6 +33,7 @@ export const Link = styled(RouterLink)({ textDecoration: "none" });
 
 export const Button = styled.button(
   css({
+    color: "black",
     border: "none",
     borderRadius: "10px",
     px: "17px",
@@ -53,19 +55,19 @@ export const Button = styled.button(
         color: "white",
         letterSpacing: "0.35em",
         width: "189px",
-        "&:hover": { bg: "blueDark" },
       },
       light: {
         bg: "black",
         color: "white",
-        width: "347px",
+        width: "355px",
       },
       dark: {
         bg: "white",
         color: "black",
-        width: "347px",
+        width: "355px",
       },
     },
   }),
-  space
+  space,
+  layout
 );

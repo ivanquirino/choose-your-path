@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const status = {
+export const Status = {
   pending: "pending",
   rejected: "rejected",
   fulfilled: "fulfilled",
@@ -8,19 +8,19 @@ export const status = {
 
 export const initialState = {
   name: "",
-  status: status.pending,
+  status: Status.pending,
 };
 
 const slice = createSlice({
-  name: "master",
+  name: "master/fetch",
   initialState,
   reducers: {
-    pending: () => ({ name: "", status: status.pending }),
+    pending: () => ({ name: "", status: Status.pending }),
     fulfilled: (_state, action) => ({
-      status: status.fulfilled,
+      status: Status.fulfilled,
       name: action.payload,
     }),
-    rejected: () => ({ status: status.rejected, name: "" }),
+    rejected: () => ({ status: Status.rejected, name: "" }),
   },
 });
 

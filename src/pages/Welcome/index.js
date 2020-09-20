@@ -4,12 +4,12 @@ import { useDispatch } from "react-redux";
 import Layout from "../../components/Container";
 import { Title, SubTitle } from "./styled";
 import { Span, Button, Flex } from "../../components/Tags";
-import { pending } from "../../state";
+import { pending as requestMaster } from "../../state";
 
 const Welcome = () => {
   const dispatch = useDispatch();
 
-  const handleStartClick = () => dispatch(pending());
+  const handleStartClick = () => dispatch(requestMaster());
 
   return (
     <Layout>
