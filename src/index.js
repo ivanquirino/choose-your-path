@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import createApp from "./App";
 import * as serviceWorker from "./serviceWorker";
+
+const App = createApp();
 
 ReactDOM.render(
   <React.StrictMode>

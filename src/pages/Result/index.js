@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Layout from "../../components/Container";
 import { Flex, Box, Link, Button, Span } from "../../components/Tags";
@@ -13,6 +13,12 @@ import { pending as requestMaster } from "../../state";
 const images = { dark, light };
 
 const Result = () => {
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    dispatch(requestMaster());
+  }, [dispatch]);
+
   const {
     status,
     name,
@@ -27,7 +33,7 @@ const Result = () => {
   } = useSelector(selector);
   const image = images[side];
 
-  const dispatch = useDispatch();
+  
 
   const handleStartClick = () => dispatch(requestMaster());
 
