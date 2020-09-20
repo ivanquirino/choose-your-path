@@ -1,6 +1,6 @@
 import { spawn, takeEvery, race, put } from "redux-saga/effects";
 import { pending, rejected, fulfilled } from "./index";
-import getPeopleById from "../services/swapi";
+import { getPeopleById } from "../services/swapi";
 
 export function* masterSaga() {
   try {
@@ -9,7 +9,7 @@ export function* masterSaga() {
       dark: getPeopleById(4),
     });
 
-    let master = light || dark;
+    let master = light || dark;    
 
     yield put(fulfilled(master.name));
   } catch (e) {
